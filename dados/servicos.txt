@@ -1,0 +1,6 @@
+id;descricao;valor
+1;Banho;45.0
+2;Tosa Higiênica;55.0
+3;Consulta Veterinária;120.0
+4;Vacinação Antirrábica;80.0
+5;Limpeza de Tártaro;150.0

@@ -1,0 +1,6 @@
+id;nome;especie;raca;dataNascimento;idCliente
+1;Rex;CAO;Vira-lata;15/05/2020;1
+2;Mimi;GATO;Siamês;20/11/2021;2
+3;Bob;CAO;Poodle;10/01/2019;1
+4;Piu;PASSARO;Canário;05/03/2022;3
+5;Nemo;PEIXE;Beta;12/08/2023;4
