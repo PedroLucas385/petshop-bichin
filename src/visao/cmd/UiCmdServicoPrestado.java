@@ -8,6 +8,7 @@ import model.Pet;
 import model.ServicoPrestado;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -94,8 +95,8 @@ public class UiCmdServicoPrestado {
 
         System.out.println("Digite a data do atendimento (AAAA-MM-DD): ");
         String dataStr = teclado.nextLine();
-        LocalDate data = LocalDate.parse(dataStr);
-
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate data = LocalDate.parse(dataStr, formato);
         this.controller.adicionar(id, idPet, idServico, valor, data);
         System.out.println("Serviço prestado cadastrado com sucesso!");
     }
@@ -145,13 +146,15 @@ public class UiCmdServicoPrestado {
     private void servicosPorPeriodo() {
         System.out.println("=== SERVIÇOS POR PERÍODO ===");
 
-        System.out.println("Digite a data inicial (AAAA-MM-DD): ");
-        String inicioStr = teclado.nextLine();
-        LocalDate inicio = LocalDate.parse(inicioStr);
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-        System.out.println("Digite a data final (AAAA-MM-DD): ");
+        System.out.print("Digite a data inicial (dd/MM/yyyy): ");
+        String inicioStr = teclado.nextLine();
+        LocalDate inicio = LocalDate.parse(inicioStr, formato);
+
+        System.out.print("Digite a data final (dd/MM/yyyy): ");
         String fimStr = teclado.nextLine();
-        LocalDate fim = LocalDate.parse(fimStr);
+        LocalDate fim = LocalDate.parse(fimStr, formato);
 
         ArrayList<ServicoPrestado> lista = this.controller.buscarPorPeriodo(inicio, fim);
         if (lista.isEmpty()) {

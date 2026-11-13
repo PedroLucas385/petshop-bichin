@@ -38,7 +38,7 @@ public class Cliente {
 
     // Validação do telefone no formato correto/padrão brasileiro
     public void setTelefone(String telefone) {
-        if(telefone.matches("\\(\\d{2}\\) \\d{5}-\\d{5}")) {
+        if(telefone.matches("\\(\\d{2}\\)\\s?\\d{4,5}-\\d{4,5}")) {
             this.telefone = telefone;
         }
         else {

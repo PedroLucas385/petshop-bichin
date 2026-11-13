@@ -21,6 +21,7 @@ public class PetController {
     }
 
     public ArrayList<Pet> listar(){
+
         return repository.listar();
     }
 

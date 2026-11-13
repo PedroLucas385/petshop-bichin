@@ -97,11 +97,11 @@ public class Pet {
 
     @Override
     public String toString() {
-        return  "id= " + id +
-                "\n nome= " + nome +
-                "\n especie= " + especie +
-                "\n raca= " + raca +
-                "\n cliente= " + cliente +
-                "\n nascimento= " + nascimento;
+        return  "ID do pet: " + id +
+                "\n Nome: " + nome +
+                "\n Espécie: " + especie +
+                "\n Raça: " + raca +
+                "\n Cliente associado: " + cliente +
+                "\n Idade: " + nascimento;
     }
 }

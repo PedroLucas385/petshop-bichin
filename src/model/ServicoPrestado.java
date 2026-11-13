@@ -87,11 +87,11 @@ public class ServicoPrestado {
 
     @Override
     public String toString() {
-        return  "id= " + id +
-                "\n servico= " + servico +
-                "\n data= " + data +
-                "\n valorCobrado= " + valorCobrado +
-                "\n pet= " + pet;
+        return  "ID do Serviço: " + id +
+                "\n Serviço prestado: " + servico +
+                "\n Data do serviço: " + data +
+                "\n Valor cobrado: " + valorCobrado +
+                "\n Pet associado: " + pet;
     }
 }
 

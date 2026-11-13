@@ -41,18 +41,21 @@ public class ServicoRepository {
     // Metodo responsável por carregar os dados(do servicos.txt) da camada de mesmo nome, com suas validações
     public void carregarDados(String caminhoArquivo) {
         try (java.io.BufferedReader br = new java.io.BufferedReader(new java.io.FileReader(caminhoArquivo))) {
-            br.readLine();
-            String linha;
+            String linha = br.readLine(); // ignora cabeçalho
 
             while ((linha = br.readLine()) != null) {
+                if (linha.trim().isEmpty()) continue;
                 String[] partes = linha.split(";");
 
                 int id = Integer.parseInt(partes[0].trim());
                 String descricao = partes[1].trim();
-                double valor= Double.parseDouble(partes[2].trim());
+                double valor = Double.parseDouble(partes[2].trim());
+
+                Servico servico = new Servico(id, descricao, valor);
+                this.adicionar(servico);
             }
         } catch (Exception e) {
-            System.out.println("Erro ao carregar serviços prestados: " + e.getMessage());
+            System.out.println("Erro ao ler o arquivo " + caminhoArquivo + ": " + e.getMessage());
         }
     }
 }

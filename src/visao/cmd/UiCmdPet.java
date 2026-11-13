@@ -6,6 +6,7 @@ import controller.PetController;
 import model.Cliente;
 import model.Pet;
 
+import java.time.format.DateTimeFormatter;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -79,7 +80,8 @@ public class UiCmdPet {
 
         System.out.println("Digite a data de nascimento: ");
         String dataStr = teclado.nextLine();
-        LocalDate nascimento = LocalDate.parse(dataStr);
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate nascimento = LocalDate.parse(dataStr, formato);
         teclado.nextLine();
 
         System.out.println("Digite o ID de seu dono: ");
@@ -123,7 +125,8 @@ public class UiCmdPet {
 
             System.out.println("Digite a nova data de nascimento: ");
             String dataStr = teclado.nextLine();
-            LocalDate novaData = LocalDate.parse(dataStr);
+            DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            LocalDate novaData = LocalDate.parse(dataStr, formato);
 
             System.out.println("Digite o novo ID do dono: ");
             int novoIdDono = teclado.nextInt();
